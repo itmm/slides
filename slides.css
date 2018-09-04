@@ -1,0 +1,103 @@
+body {
+	max-width: 960px;
+	padding: 20px;
+	font-size: large;
+	margin: 0 auto;
+}
+.row {
+	display: flex;
+	padding: 20px 0;
+	flex-direction: row;
+}
+.row .slide {
+	display: inline-block;
+	width: 480px;
+	height: 360px;
+	border: solid 1px black;
+	padding: 0;
+	flex-shrink: 0;
+	order: 1;
+}
+.row .notes {
+	display: inline-block;
+	flex-grow: 1;
+	order: 2;
+}
+
+.row .notes li {
+	padding: 8px;
+}
+
+.row:nth-child(even) .notes {
+	order: 1;
+}
+
+.row:nth-child(even) .slide {
+	order: 2;
+}
+
+.row .slide.title h1 {
+	font-size: xx-large;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	width: 480px;
+	height: 360px;
+}
+
+.row .slide.code {
+	padding: 20px;
+}
+
+.row .slide.code .in1 {
+	display: inline-block;
+	width: 40px;
+}
+
+.row .slide.code .in2 {
+	display: inline-block;
+	width: 80px;
+}
+
+.row .slide.code .in3 {
+	display: inline-block;
+	width: 120px;
+}
+
+.row .slide.code .in4 {
+	display: inline-block;
+	width: 160px;
+}
+
+.slide.code .expand, .slide.code .add, .slide.code .end,
+.slide.code .include, .slide.code .define,
+code.expand, code.add, code.end, code.include, code.define {
+	color: #c20;
+}
+
+.slide.code .macro-name, code.macro-name, .slide.code .include-name,
+.slide.code .define .name,
+code.include-name {
+	color: #e40;
+}
+
+.slide.code .type, code.type {
+	color: #338;
+}
+
+.slide.code .var, .slide.code .fn, code.var, code.fn {
+	color: #262;
+}
+
+.slide.code .define .var, .slide.code .define .fn {
+	color: #741;
+}
+
+.slide.code .keyword, code.keyword {
+	color: #800;
+	font-weight: bold;
+}
+
+.slide.code .define .keyword {
+	color: #a10;
+}
