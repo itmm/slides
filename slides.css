@@ -14,8 +14,9 @@ body {
 }
 .row .slide {
 	display: inline-block;
-	width: 480px;
-	height: 360px;
+	font: fixed;
+	width: 47ch;
+	height: 16.5em;
 	border: solid 1px black;
 	padding: 0;
 	background-image: url(background.jpg);
@@ -51,7 +52,7 @@ body {
 }
 
 .row .slide.code {
-	padding: 20px;
+	padding: 0.5em 1ch;
 }
 
 .row .slide.code .in1 {
