@@ -13,10 +13,12 @@ body {
 	flex-direction: row;
 }
 .row .slide {
-	display: inline-block;
+  display: flex;
+	    justify-content: center;
+		  align-items: center; 
 	font: fixed;
-	width: 47ch;
-	height: 16.5em;
+	width: 49ch;
+	height: 17em;
 	border: solid 1px black;
 	padding: 0;
 	background-image: url(background.jpg);
@@ -43,36 +45,27 @@ body {
 }
 
 .row .slide.title h1 {
-	font-size: xx-large;
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-	width: 480px;
-	height: 360px;
-}
-
-.row .slide.code {
-	padding: 0.5em 1ch;
+	font-size: x-large;
 }
 
 .row .slide.code .in1 {
 	display: inline-block;
-	width: 40px;
+	width: 4ch;
 }
 
 .row .slide.code .in2 {
 	display: inline-block;
-	width: 80px;
+	width: 8ch;
 }
 
 .row .slide.code .in3 {
 	display: inline-block;
-	width: 120px;
+	width: 12ch;
 }
 
 .row .slide.code .in4 {
 	display: inline-block;
-	width: 160px;
+	width: 16ch;
 }
 
 .slide.code .expand, .slide.code .add, .slide.code .end,
@@ -107,3 +100,4 @@ code.include-name {
 .slide.code .define .keyword {
 	color: #a10;
 }
+
