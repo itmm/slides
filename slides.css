@@ -68,6 +68,11 @@ body {
 	width: 16ch;
 }
 
+.row .slide.code .in5 {
+	display: inline-block;
+	width: 20ch;
+}
+
 .slide.code .expand, .slide.code .add, .slide.code .end,
 .slide.code .include, .slide.code .define,
 code.expand, code.add, code.end, code.include, code.define {
