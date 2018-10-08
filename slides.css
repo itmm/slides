@@ -73,6 +73,11 @@ div.slides > div > div > code .in5 {
 	width: 20ch;
 }
 
+div.slides > div > div > code .in6 {
+	display: inline-block;
+	width: 24ch;
+}
+
 code .expand, code.expand,
 code .add, code.add,
 code .end, code.end,
