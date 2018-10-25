@@ -44,8 +44,14 @@ div.slides > div:nth-child(even) > div {
 	order: 2;
 }
 
-div.slides > div > div h1 {
+div.xslides > div > div h1 {
 	font-size: x-large;
+}
+div.slides > div > div h1,
+div.slides > div > div h2,
+div.slides > div > div h3 {
+	padding: 32px;
+	text-align: center;
 }
 
 div.slides > div > div > code .in1 {
