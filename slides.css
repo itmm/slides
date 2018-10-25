@@ -78,11 +78,8 @@ div.slides > div > div > code .in6 {
 	width: 24ch;
 }
 
-code .expand, code.expand,
-code .add, code.add,
-code .end, code.end,
-code .include, code.include,
-code .define, code.define {
+code .expand, code .add, code .end,
+code .include, code .define, {
 	color: #c20;
 }
 
@@ -94,24 +91,23 @@ code .define .name, code.define .name {
 	color: #e40;
 }
 
-code .type, code.type {
+code .type {
 	color: #338;
 }
 
-code .var, code.var,
-code .fn, code.fn {
+code .var, code .fn {
 	color: #262;
 }
 
-code .str, code.str {
+code .str {
 	color: #626;
 }
 
-code .num, code.num {
+code .num {
 	color: #228;
 }
 
-code .keyword, code.keyword {
+code .keyword {
 	color: #800;
 	font-weight: bold;
 }
