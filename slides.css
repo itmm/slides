@@ -79,15 +79,13 @@ div.slides > div > div > code .in6 {
 }
 
 code .expand, code .add, code .end,
-code .include, code .define, {
+code .include, code .define {
 	color: #c20;
 }
 
-code .expand .name, code.expand .name,
-code .add .name, code.add .name,
-code .end .name, code.end .name,
-code .include .name, code.include .name,
-code .define .name, code.define .name {
+code .expand .name, code .add .name,
+code .end .name, code .include .name,
+code .define .name {
 	color: #e40;
 }
 
