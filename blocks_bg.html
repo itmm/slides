@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="de"l>
+<head>
+<meta charset="utf-8">
+<title>Zufällige Rechtecke</title><link rel="stylesheet" type="text/css" href="slides.css"></head>
+<body>
+<h1>Zufällige Rechtecke</h1>
+<div class="slides">
+<div><div>
+<h1>Zufällige Rechtecke</h1>
+</div>
+</div>
+<div><div>
+<code>
+
+<span class="add">@def(<span class="name">file: blocks_bg.c)</span></span><br/>
+<span class="in1"></span>
+<span class="expand">@expand(<span class="name">includes)</span></span><br/>
+<span class="in1"></span>
+<span class="expand">@expand(<span class="name">globals)</span></span><br/>
+<span class="in1"></span>
+<span class="expand">@expand(<span class="name">functions)</span></span><br/>
+<span class="in1"></span>
+int main() {<br/>
+<span class="in2"></span>
+<span class="expand">@expand(<span class="name">main)</span></span><br/>
+<span class="in1"></span>
+}<br/>
+
+<span class="end">@end(<span class="name">file: blocks_bg.c)</span></span><br/>
+</code>
+</div>
+</div>
+<div><div>
+<code>
+
+<span class="add">@def(<span class="name">includes)</span></span><br/>
+<span class="in1"></span>
+#include &lt;stdio.h&gt;<br/>
+<span class="in1"></span>
+#include &lt;stdlib.h&gt;<br/>
+<span class="in1"></span>
+#include &lt;time.h&gt;<br/>
+<span class="in1"></span>
+#include &lt;math.h&gt;<br/>
+
+<span class="end">@end(<span class="name">includes)</span></span><br/>
+</code>
+</div>
+</div>
+<div><div>
+<code>
+
+<span class="add">@def(<span class="name">globals)</span></span><br/>
+<span class="in1"></span>
+static const int cols = 10;<br/>
+<span class="in1"></span>
+static const int rows = 8;<br/>
+<span class="in1"></span>
+static const int width = 10;<br/>
+<span class="in1"></span>
+static const int gap = 2;<br/>
+<span class="in1"></span>
+static const int step = 12;<br/>
+
+<span class="end">@end(<span class="name">globals)</span></span><br/>
+</code>
+</div>
+</div>
+<div><div>
+<code>
+
+<span class="add">@def(<span class="name">functions)</span></span><br/>
+<span class="in1"></span>
+static inline void toHex(<br/>
+<span class="in2"></span>
+char *dst, int v<br/>
+<span class="in1"></span>
+) {<br/>
+<span class="in2"></span>
+static const char digits[] =<br/>
+<span class="in3"></span>
+"0123456789abcdef";<br/>
+<span class="in2"></span>
+*dst++ = digits[v &gt;&gt; 4];<br/>
+<span class="in2"></span>
+*dst = digits[v &amp; 0xf];<br/>
+<span class="in1"></span>
+}<br/>
+
+<span class="end">@end(<span class="name">functions)</span></span><br/>
+</code>
+</div>
+</div>
+<div><div>
+<code>
+
+<span class="add">@add(<span class="name">functions)</span></span><br/>
+<span class="in1"></span>
+static inline void buildColor(<br/>
+<span class="in2"></span>
+char *dst, int r, int g, int b<br/>
+<span class="in1"></span>
+) {<br/>
+<span class="in2"></span>
+toHex(dst + 1, r);<br/>
+<span class="in2"></span>
+toHex(dst + 3, g);<br/>
+<span class="in2"></span>
+toHex(dst + 5, b);<br/>
+<span class="in1"></span>
+}<br/>
+
+<span class="end">@end(<span class="name">functions)</span></span><br/>
+</code>
+</div>
+</div>
+<div><div>
+<code>
+
+<span class="add">@def(<span class="name">main)</span></span><br/>
+<span class="in1"></span>
+srand(time(NULL));<br/>
+<span class="in1"></span>
+printf(<br/>
+<span class="in2"></span>
+"&lt;svg version=\"1.1\" "<br/>
+<span class="in2"></span>
+"baseProfile=\"full\" "<br/>
+<span class="in2"></span>
+"width=\"%d\" height=\"%d\" "<br/>
+<span class="in2"></span>
+"xmlns=\"http://www.w3.org/"<br/>
+<span class="in3"></span>
+"2000/svg\"&gt;\n",<br/>
+<span class="in2"></span>
+cols * step - gap,<br/>
+<span class="in2"></span>
+rows * step - gap<br/>
+<span class="in1"></span>
+);<br/>
+<span class="in1"></span>
+<span class="expand">@expand(<span class="name">generate cells)</span></span>;<br/>
+<span class="in1"></span>
+puts("&lt;/svg&gt;");<br/>
+
+<span class="end">@end(<span class="name">main)</span></span><br/>
+</code>
+</div>
+</div>
+<div><div>
+<code>
+
+<span class="add">@def(<span class="name">generate cells)</span></span><br/>
+<span class="in1"></span>
+for (int j = 0; j &lt; rows; ++j) {<br/>
+<span class="in2"></span>
+int dy = j;<br/>
+<span class="in2"></span>
+int dyq = dy * dy;<br/>
+<span class="in2"></span>
+double maxDist = sqrt(<br/>
+<span class="in3"></span>
+cols * cols + rows * rows<br/>
+<span class="in2"></span>
+);<br/>
+<span class="in2"></span>
+for (int i = 0; i &lt; cols; ++i) {<br/>
+<span class="in3"></span>
+int dx = (cols - 1 - i);<br/>
+<span class="in3"></span>
+int dxq = dx * dx;<br/>
+<span class="in3"></span>
+<span class="expand">@expand(<span class="name">generate cell)</span></span>;<br/>
+<span class="in2"></span>
+}<br/>
+<span class="in1"></span>
+}<br/>
+
+<span class="end">@end(<span class="name">generate cells)</span></span><br/>
+</code>
+</div>
+</div>
+<div><div>
+<code>
+
+<span class="add">@def(<span class="name">generate cell)</span></span><br/>
+<span class="in1"></span>
+double dist = sqrt(dxq + dyq) / maxDist;<br/>
+<span class="in1"></span>
+double r = rand() * 1.0 / RAND_MAX;<br/>
+<span class="in1"></span>
+if (r &lt; dist) {<br/>
+<span class="in2"></span>
+char fill[8] = "#123456";<br/>
+<span class="in2"></span>
+<span class="expand">@expand(<span class="name">set fill color)</span></span>;<br/>
+<span class="in2"></span>
+printf(<br/>
+<span class="in3"></span>
+"\t&lt;rect x=\"%d\" y=\"%d\" "<br/>
+<span class="in3"></span>
+"width=\"%d\" height=\"%d\" "<br/>
+<span class="in3"></span>
+"fill=\"%s\"&gt;&lt;/rect&gt;\n",<br/>
+<span class="in3"></span>
+i * step, j * step, width, width,<br/>
+<span class="in3"></span>
+fill<br/>
+<span class="in2"></span>
+);<br/>
+<span class="in1"></span>
+}<br/>
+
+<span class="end">@end(<span class="name">generate cell)</span></span><br/>
+</code>
+</div>
+</div>
+<div><div>
+<code>
+
+<span class="add">@def(<span class="name">set fill color)</span></span><br/>
+<span class="in1"></span>
+int d = rand() % 0x08;<br/>
+<span class="in1"></span>
+if (rand() % 10 == 0) {<br/>
+<span class="in2"></span>
+buildColor(<br/>
+<span class="in3"></span>
+fill, 0xee, 0xee, 0xff - d<br/>
+<span class="in2"></span>
+);<br/>
+<span class="in1"></span>
+} else {<br/>
+<span class="in2"></span>
+buildColor(<br/>
+<span class="in3"></span>
+fill, 0xee, 0xff - d, 0xee<br/>
+<span class="in2"></span>
+);<br/>
+<span class="in1"></span>
+}<br/>
+
+<span class="end">@end(<span class="name">set fill color)</span></span><br/>
+</code>
+</div>
