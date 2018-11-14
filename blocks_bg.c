@@ -8,6 +8,7 @@
 	
 	static const int cols = 10;
 	static const int rows = 8;
+
 	static const int width = 10;
 	static const int gap = 2;
 	static const int step = 12;
@@ -18,12 +19,13 @@
 	) {
 		static const char digits[] =
 			"0123456789abcdef";
-		*dst++ = digits[v >> 4];
-		*dst = digits[v & 0xf];
+		dst[0] = digits[v >> 4];
+		dst[1] = digits[v & 0xf];
 	}
 
 	static inline void buildColor(
-		char *dst, int r, int g, int b
+		char *dst,
+		int r, int g, int b
 	) {
 		toHex(dst + 1, r);
 		toHex(dst + 3, g);
@@ -46,14 +48,14 @@
 	for (int j = 0; j < rows; ++j) {
 		int dy = j;
 		int dyq = dy * dy;
-		double maxDist = sqrt(
-			cols * cols + rows * rows
-		);
+		double maxDist =
+			sqrt(cols * cols + rows * rows);
 		for (int i = 0; i < cols; ++i) {
 			int dx = (cols - 1 - i);
 			int dxq = dx * dx;
+			double dist =
+				sqrt(dxq + dyq) / maxDist;
 			
-	double dist = sqrt(dxq + dyq) / maxDist;
 	double r = rand() * 1.0 / RAND_MAX;
 	if (r < dist) {
 		char fill[8] = "#123456";
