@@ -3,7 +3,8 @@ body {
 	padding: 20px;
 	font-size: large;
 	margin: 0 auto;
-	background-image: url(background.jpg);
+	background-color: white;
+	background-image: url(bg.svg);
 	background-attachment: fixed;
 	background-size: cover;
 }
@@ -21,7 +22,8 @@ div.slides > div > div {
 	height: 17em;
 	border: solid 1px black;
 	padding: 0;
-	background-image: url(background.jpg);
+	background-color: white;
+	background-image: url(bg.svg);
 	background-size: cover;
 	flex-shrink: 0;
 	order: 1;
@@ -96,19 +98,19 @@ code .define .name {
 }
 
 code .type {
-	color: #338;
+	color: #22a;
 }
 
 code .var, code .fn {
-	color: #262;
+	color: #191;
 }
 
 code .str {
-	color: #626;
+	color: #727;
 }
 
 code .num {
-	color: #228;
+	color: #22c;
 }
 
 code .keyword {
