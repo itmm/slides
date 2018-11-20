@@ -110,11 +110,11 @@ code .fn {
 }
 
 code .str {
-	color: #b3cb74;
+	color: #7c955b;
 }
 
 code .num {
-	color: #22c;
+	color: #b3cb74;
 }
 
 code .keyword {
