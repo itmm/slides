@@ -121,4 +121,6 @@ code .keyword {
 	color: #cc7832;
 	font-weight: bold;
 }
-
+span.virt:after {
+	content: " ↵";
+}
