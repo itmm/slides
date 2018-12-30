@@ -87,14 +87,11 @@ div.slides > div > div > code .in6 {
 	width: 24ch;
 }
 
-code .expand, code .add, code .end,
-code .include, code .define {
+code .macro {
 	color: #c20;
 }
 
-code .expand .name, code .add .name,
-code .end .name, code .include .name,
-code .define .name {
+code .macro .name {
 	color: #e40;
 }
 
