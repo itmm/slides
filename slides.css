@@ -29,6 +29,9 @@ div.slides > div > div {
 	flex-shrink: 0;
 	order: 1;
 }
+div.slides h1, div.slides h2, div.slides h3 div.slides h4 {
+	font-family: initial;
+}
 div.slides > div > ul {
 	display: inline-block;
 	flex-grow: 1;
