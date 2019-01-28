@@ -18,8 +18,8 @@ div.slides > div > div {
 	display: flex;
 	justify-content: center;
 	align-items: center; 
-	font: fixed;
-	width: 49ch;
+	font-family: monospace;
+	width: 44ch;
 	height: 17em;
 	border: solid 1px black;
 	padding: 0;
