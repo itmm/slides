@@ -94,7 +94,7 @@ code .macro {
 	color: #c20;
 }
 
-code .macro .name {
+code .macro .name, code .macro .name a, code .macro .name a:visited {
 	color: #e40;
 }
 
