@@ -1,6 +1,6 @@
 # HTML-Slides
 
 ```
-i{blocks_bg.x}
+@inc(blocks_bg.x)
 ```
 

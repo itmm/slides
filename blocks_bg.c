@@ -48,14 +48,16 @@
 	for (int j = 0; j < rows; ++j) {
 		int dy = j;
 		int dyq = dy * dy;
-		double maxDist =
-			sqrt(cols * cols + rows * rows);
+		double maxDist = sqrt(
+			cols * cols + rows * rows
+		);
 		for (int i = 0; i < cols; ++i) {
-			int dx = (cols - 1 - i);
-			int dxq = dx * dx;
-			double dist =
-				sqrt(dxq + dyq) / maxDist;
 			
+	int dx = (cols - 1 - i);
+	int dxq = dx * dx;
+	double dist =
+		sqrt(dxq + dyq) / maxDist;
+	
 	double r = rand() * 1.0 / RAND_MAX;
 	if (r < dist) {
 		char fill[8] = "#123456";
@@ -63,11 +65,11 @@
 	int d = rand() % 0x08;
 	if (rand() % 10 == 0) {
 		buildColor(
-			fill, 0x45, 0x49, 0x4a - d
+			fill, 0xee, 0xee, 0xff - d
 		);
 	} else {
 		buildColor(
-			fill, 0x45, 0x49 - d, 0x4a
+			fill, 0xee, 0xff - d, 0xee
 		);
 	}
 ;
@@ -75,10 +77,11 @@
 			"\t<rect x=\"%d\" y=\"%d\" "
 			"width=\"%d\" height=\"%d\" "
 			"fill=\"%s\"></rect>\n",
-			i * step, j * step, width, width,
-			fill
+			i * step, j * step, width,
+			width, fill
 		);
 	}
+;
 ;
 		}
 	}
