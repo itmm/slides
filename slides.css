@@ -139,5 +139,7 @@ li h2, li h2, li h3, li h4 {
 	padding: 0;
 	text-align: left;
 }
-
+div.slide-nr {
+	display: none;
+}
 
