@@ -22,10 +22,8 @@ div.slides > div > div {
 	justify-content: center;
 	align-items: center; 
 	font-family: monospace;
-	width: 44ch;
-	height: 17em;
 	border: solid 1px black;
-	padding: 0;
+	padding: 20px;
 	background-color: #3c3f41;
 	background-image: url(bg.svg);
 	background-size: cover;
@@ -55,6 +53,10 @@ div.slides > div:nth-child(even) > div {
 
 h1, h2, h3 {
 	color: #a8a8a2;
+}
+
+div.slide.slide-header {
+	display: none;
 }
 
 div.xslides > div > div h1 {
